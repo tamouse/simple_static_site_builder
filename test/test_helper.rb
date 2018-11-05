@@ -3,6 +3,7 @@ require "simple_static_site_builder"
 require "minitest/autorun"
 require "tmpdir"
 require "fileutils"
+require "erb"
 require "byebug"
 
 def run_in_tmpdir(&b)
