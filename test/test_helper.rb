@@ -3,6 +3,7 @@ require "simple_static_site_builder"
 require "minitest/autorun"
 require "tmpdir"
 require "fileutils"
+require "byebug"
 
 def run_in_tmpdir(&b)
   Dir.mktmpdir() do |tmp_test_dir|
@@ -13,6 +14,6 @@ def run_in_tmpdir(&b)
 end
 
 def copy_test_data(dest)
-  template_dir = File.expand_path("../", "template")
-  FileUtils.cp_r(template_dir, dest)
+  template_dir = File.expand_path("../template", __FILE__)
+  FileUtils.cp_r(File.join(template_dir, "."), dest)
 end
