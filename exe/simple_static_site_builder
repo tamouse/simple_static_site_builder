@@ -1,4 +1,4 @@
 #!/usr/bin/env ruby
 
 require "simple_static_site_builder"
-SimpleStaticSiteBuilder::CLI.new(ARGV).run
+SimpleStaticSiteBuilder::ProcessDir.new(Dir.pwd).run
